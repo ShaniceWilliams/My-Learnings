@@ -1,4 +1,5 @@
 # Chapter 1 - A Brief Introduction
+These notes are based on the Javascript Essential Training Course on Linkedin Learning with Morten Rand-Hendriksen.
 
 ## Navigating the JS Landscape
 
