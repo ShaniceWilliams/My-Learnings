@@ -66,12 +66,21 @@ There are two main ways to access a object property:
 - Dot notation
 - Bracket notation
 
-Dot notation uses a dot between the object name and the propertie name. For example:
+**Dot notation** uses a dot between the object name and the property name. THis is the preferred method for referring to object properties. For example:
 
 ```JavaScript
-console.log(backpack.pocketNum);
+console.log("The poketNum value: ", backpack.pocketNum);
 ```
-Bracket Notation 
+**Bracket Notation** uses square brackets to refer to an object property. This can be used when the property name is not standard (for instance has a space). Here is an example:
+```JavaScript
+console.log("The poketNum value: ", backpack["pocketNum"]);
+```
+This can also be used when the value of a variable is an object property:
+```JavaScript
+var query = "pocketNum"
+console.log("The poketNum value: ", backpack[query]);
+```
+This allows for more flexibility as we could not use dot notation for that variable.
 
 
 ## Practice: Build a new object
