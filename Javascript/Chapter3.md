@@ -82,8 +82,49 @@ console.log("The poketNum value: ", backpack[query]);
 ```
 This allows for more flexibility as we could not use dot notation for that variable.
 
-
 ## Practice: Build a new object
+
+Task:
+  - Create JavaScript objects based on objects in your current environment.
+  - Give each object an identifiable name.
+  - Create properties to describe the objects and set their values.
+  - Find an object that has another object inside of it to create a nested object.
+  - Test your objects in the browser console by accessing the entire object and its specific properties.
+
+Here was my examples of creating a laptop object and a pen holder object:
+```Javascript
+const laptop = {
+    name: "Microsoft Surface 8",
+    screenSize: 13,
+    processor: "Intel i7 11th gen",
+    ramSize: "16",
+    storage: 256,
+    storageUnit: "gb",
+    colour:"black",
+    kbAttached: false,
+    attachKb: function (kbStatus) {
+    this.kbAttached = kbStatus;
+  },
+};
+console.log(laptop.ramSize, laptop.storageUnit)
+
+const penHolder = {
+    matieral: "wood",
+    capacity: 20,
+    currentFillLevel: 50,
+    pens: {
+        ballpoint : {
+            inkColor: "black"
+        },
+        fountainPen: {
+            inkColor: "Blue",
+            cartridgesLeft: 5
+        }
+    }
+};
+ 
+console.log(penHolder.pens.fountainPen)
+```
 
 ## Object methods
 
