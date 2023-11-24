@@ -1,11 +1,11 @@
 # Topic 1 - What Linear Algebra is
 
 An example of algebra could be something as simple as this:
-![Simple algebra example](Linear Algebra for Machine Learning/Intro to Linear Algebra/Images/simplealgebra.png)
+![Simple algebra example](/Images/simplealgebra.png)
 
 Examples such as these cannot be considered linear:
-![Not linear - Example 1](Linear Algebra for Machine Learning/Intro to Linear Algebra/Images/notlinear1.png)
-![Not linear - Example 2](Linear Algebra for Machine Learning/Intro to Linear Algebra/Images/notlinear2.png)
+![Not linear - Example 1](/Images/notlinear1.png)
+![Not linear - Example 2](/Images/notlinear2.png)
 
 ***
 ### Linear Algebra is: Solving for unknowns within a system of linear equations
