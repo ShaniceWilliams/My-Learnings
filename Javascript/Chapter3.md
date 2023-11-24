@@ -82,6 +82,8 @@ console.log("The poketNum value: ", backpack[query]);
 ```
 This allows for more flexibility as we could not use dot notation for that variable.
 
+---
+
 ## Practice: Build a new object
 
 Task:
@@ -126,11 +128,151 @@ const penHolder = {
 console.log(penHolder.pens.fountainPen)
 ```
 
+---
+
 ## Object methods
+
+Functions within objects typically perform actions on the properties of the object. When fucntiosn are inside an object, they are called methods.
+
+There are two ways that a function can be called as can be seen below, however the convention is to use the first method as this is more readable and it leaves less room for interpretation.
+
+```JavaScript
+toggleLid: function (lidStatus) {
+    this.lidOpen = lidStatus;
+  },
+
+toggleLid(lidStatus) {
+    this.lidOpen = lidStatus;
+  },
+```
+Within the parentheses we can see `lidStatus` which is the parameter for this method. THis means that when we want to call the method to make a change to toggle the lid, we will need to provide that data within the fucntion call, for the change to be made.
+
+Here is an example of the methods being called:
+
+```JavaScript
+toggleLid(true);
+
+backpack.newStraplength(10,15);
+```
+In the second example this method required two parameters, as there is a strap length for left and right.
+
+---
 
 ## Practice: Build a new method
 
+Task:
+  - Create a method for each object property.
+  - The method receives a value to match the property to be changed.
+  - Create a simple function to replace the current property value with the received value.
+  - Test the method by sending new values and checking the properties in the console.
+
+```JavaScript
+const backpack = {
+  name: "Everyday Backpack",
+  volume: 30,
+  color: "grey",
+  pocketNum: 15,
+  strapLength: {
+    left: 26,
+    right: 26,
+  },
+  toggleLid: function (lidStatus) {
+    this.lidOpen = lidStatus;
+  },
+  newStrapLength: function (lengthLeft, lengthRight) {
+    this.strapLength.left = lengthLeft;
+    this.strapLength.right = lengthRight;
+  },
+  updateName: function(newName) {
+    this.name = newName;
+  },
+  updateVolume: function(newVolume) {
+    this.volume = newVolume;
+  },
+  updateColor: function(newColor) {
+    this.color = newColor;
+  },
+  updatePocketNum: function(newPocketNum) {
+    this.pocketNum = newPocketNum;
+  },
+};
+```
+
+---
+
 ## Classes: Object blueprints
+
+Classes are blueprints for making objects that share the same properties and methods.
+
+To create a class first we use either a class declaration or class expression:
+```JavaScript
+/*Class Declaration*/
+class NameOfCLass {}
+
+/*Class Expression*/
+const NameOfCLass = class {}
+
+```
+There is no real difference between the two, just preference. Most use the expression, but in the example provided, declaration is used.
+
+There are 3 main steps when creating a class:
+  1. Define the parameters
+  2. Define the properties
+  3. Outline any methods
+
+```JavaScript
+class Backpack {
+    constructor(
+        //Defines parameters
+        name,
+        volume,
+        color,
+        pocketNum,
+        strapLengthL,
+        strapLengthR,
+        lidOpen
+    ) {
+        //Define Properties
+        this.name = name;
+        this.volume = volume;
+        this.color = color;
+        this.pocketNum = pocketNum;
+        this.strapLength = {
+            left: strapLengthL,
+            right: strapLengthR,
+        };
+        this.lidOpen = lidOpen;
+    }
+    //Add method to class
+    toggleLid: function (lidStatus) {
+        this.lidOpen = lidStatus;
+  }
+    newStrapLength: function (lengthLeft, lengthRight) {
+        this.strapLength.left = lengthLeft;
+        this.strapLength.right = lengthRight;
+  }
+}
+
+```
+
+To create a new object based on the class we have created, we have to create a new constant and the `new` keyword with the data that we want for each parameter as below. Once the object is created we can access the properties as we have in previous examples.
+```JavaScript
+const everydayPack = new Backpack(
+    "Everyday Backpack",
+    30,
+    "grey",
+    15,
+    25,
+    25,
+    false
+);
+
+console.log("The everydayPack object:", everydayPack);
+console.log("Number of pockets:", everydayPack.pocketNum);
+```
+Classes are usually created in a seperate file and then imported into the file where the object is to be created to reduce the chance of trying to create an object without the class being ready.
+
+---
 
 ## Object contructors
 
