@@ -276,8 +276,54 @@ Classes are usually created in a seperate file and then imported into the file w
 
 ## Object contructors
 
+Object constructors are another shorter and less advanced way to create objects when compared to classes. This is a function. the main way this is different to the lass is that the methods are contained within the constructing functionn alongside the properties as can be seen in the below example:
+
+```JavaScript
+function Backpack(
+  name,
+  volume,
+  color,
+  pocketNum,
+  strapLengthL,
+  strapLengthR,
+  lidOpen
+) {
+  this.name = name;
+  this.volume = volume;
+  this.color = color;
+  this.pocketNum = pocketNum;
+  this.strapLength = {
+    left: strapLengthL,
+    right: strapLengthR,
+  };
+  this.lidOpen = lidOpen;
+  this.toggleLid = function (lidStatus) {
+    this.lidOpen = lidStatus;
+  };
+  this.newStrapLength = function (lengthLeft, lengthRight) {
+    this.strapLength.left = lengthLeft;
+    this.strapLength.right = lengthRight;
+  };
+}
+```
+To construct a new object based oin this is dopne in the same was as you would when creating a class.
+
+Classes offer more flecxibility and capabilities, but older code may contain this constructor functions.
+
+---
 ## Practice: Build a new object with a constructor
 
+Task: Making classes and objects
+  - Find a type of object you have more than one of in your house (eg. clothing, writing tools, etc).
+  - Create a class describing this object type - its properties and methods.
+  - Create several objects using the class.
+  - Test the objects by calling their properties and using their methods in the console.
+
+```JavaScript
+
+```
+
+---
 ## Global objects
 
 ## Challenge: Create a new object type
