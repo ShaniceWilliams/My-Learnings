@@ -24,7 +24,7 @@ When the groupby method is used, we generate a dataframe containing a slice of o
 reviews.groupby('winery').apply(lambda df: df.title.iloc[0])
 ```
 
-WE can also group by more than one column, like in the next example we can look for the best wine grouped by country and province:
+We can also group by more than one column, like in the next example we can look for the best wine grouped by country and province:
 
 ```Python
 reviews.groupby(['country', 'province']).apply(lambda df: df.loc[df.points.idxmax()])
