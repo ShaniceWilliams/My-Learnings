@@ -38,7 +38,42 @@ reviews.groupby(['country']).price.agg([len, min, max])
 ---
 ## Multi-indexes
 
+For all of the previous ecxamples we worked with single-label index Data frame and Series objects. Sometimes when we run groupby() the result will contain a multi-index. It's named as such as it has multiple levels.
 
+```Python
+country_reviewed = reviews.groupby(['country', 'province']).description.agg([len])
+```
+The result of the above statement contains a index based on country as well as based on province.
 
+We can check thatn this is the case using the `.index` method in conjunction with `type()`. The below will result in `pandas.core.index.multi.MultiIndex`
 
+```Python
+mi = countries_reviwed.index()
+type(mi)
+```
+
+We can also convert multi-indices into regular columns by using the `reset_index()` method.
+
+```Python
+countries_reviewed.reset_index()
+```
+
+---
 ## Sorting
+
+Now we have grouped our data, we might like to sort it. We can do this using the `sort_values()` method.
+
+```Python
+countries_reviewed = countries_reviewed.reset_index()
+countries_reviewed.sort_values(by='len')
+```
+
+By default, this sort will be in asending order. To change that we would need to add the parameter: `asending=False`
+
+To sort based on index values instead we would need to utilise the `sort_index()` method.
+
+We can also sort by multiple columns by including more than one column as list in the `by` parameter, like this example:
+
+```Python
+countries_reviewed.sort_values(by=['country', 'len'])
+```
