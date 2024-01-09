@@ -68,7 +68,7 @@ countries_reviewed = countries_reviewed.reset_index()
 countries_reviewed.sort_values(by='len')
 ```
 
-By default, this sort will be in asending order. To change that we would need to add the parameter: `asending=False`
+By default, this sort will be in asending order. To change that we would need to add the parameter: `ascending=False`
 
 To sort based on index values instead we would need to utilise the `sort_index()` method.
 
