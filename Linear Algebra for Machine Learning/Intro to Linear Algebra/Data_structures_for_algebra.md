@@ -40,14 +40,13 @@ Same methods are used to create vector tensors as scalar tensors in pytorch and 
 
 Vectors not only represent a point in space but they can also a magnitude and director from an origin. The magnitude of a vector refers to the size of the movement from the origin. Norms are functions that allow us to quantify this magnitude.
 
+---
 ### $L^2$ Norm
 
 The $L^2$ norm is represented by the following equation:
 
 $$
-\newcommand{\abs}[1]{\lvert#1\rvert}
-\newcommand{\norm}[1]{\lVert#1\rVert}
-\norm{{x}}_2 = \sqrt{\sum_ix_i^2}
+\Vert{{x}}\Vert_2 = \sqrt{\sum_ix_i^2}
 $$
 
 Steps to perform this equation are as follows:
@@ -71,22 +70,20 @@ But the easy way is to utlisise the numpy method `norm`:
 np.linalg.norm(x)
 ```
 
+---
 ### Unit vectors
 
 Unit vectors are special cases of vectors where the magnitude is equal to 1.
 $$
-\renewcommand{\abs}[1]{\lvert#1\rvert}
-\renewcommand{\norm}[1]{\lVert#1\rVert}
-\norm{{x}} = 1
+\Vert{{x}}\Vert = 1
 $$
 
+---
 ### $L^1$ Norm
 The $L^1$ norm is used whenever the difference between zero and non sero is critical.
 
 $$
-\renewcommand{\abs}[1]{\lvert#1\rvert}
-\renewcommand{\norm}[1]{\lVert#1\rVert}
-\norm{{x}}_1 = \sum_i\abs{{x_i}}
+\Vert{{x}}\Vert_1 = \sum_i\vert{{x_i}}\vert
 $$
 
 Steps to perform this equation are as follows:
@@ -94,6 +91,7 @@ Steps to perform this equation are as follows:
 
 In python we can use `np.abs` to get absolute values.
 
+---
 ### Squared $L^2$ Norm
 
 The squared $L^2$ norm is computationally cheaper to perform that the standard $L^2$ norm:
@@ -101,9 +99,7 @@ The squared $L^2$ norm is computationally cheaper to perform that the standard $
 - Derivatives are used to train many ML algorithms and to do this using squared $L^2$ norms requires only the individual element. If using the standard $L^2$ norms you would need the entire vector to complete/ find the derivative.
 
 $$
-\renewcommand{\abs}[1]{\lvert#1\rvert}
-\renewcommand{\norm}[1]{\lVert#1\rVert}
-\norm{{x}}_2^2 = \sum_ix_i^2
+\Vert{{x}}\Vert_2^2 = \sum_ix_i^2
 $$
 
 Steps to perform this equation are as follows:
@@ -121,13 +117,12 @@ np.dot(x, x)
 
 This norm is not good for when being able to distinguish between zeero and near zero is important.
 
+---
 ### Max Norm ($L^\infty$)
 The max norm is simply the largest absolute element within the vector.
 
 $$
-\renewcommand{\abs}[1]{\lvert#1\rvert}
-\renewcommand{\norm}[1]{\lVert#1\rVert}
-\norm{{x}}_\infty = max_i\abs{{x_i}}
+\Vert{{x}}\Vert_\infty = max_i\vert{{x_i}}\vert
 $$
 
 This would be performed in python as follows:
@@ -135,18 +130,20 @@ This would be performed in python as follows:
 np.max([np.abs(25), np.abs(2), np.abs(5)])
 ```
 
+---
 ### Generalised $L^p$ norm
 
 $$
-\renewcommand{\abs}[1]{\lvert#1\rvert}
-\renewcommand{\norm}[1]{\lVert#1\rVert}
-\norm{{x}}_p = (\sum_i\abs{{x_i}}^p)^\frac{1}{p}
+\Vert{{x}}\Vert_p = (\sum_i\vert{{x_i}}\vert^p)^\frac{1}{p}
 $$
 
 The generalised norm can be used to derive $L^1$, $L^2$, and $L^\infty$ norms by substituting p.
 
-$P$ must be:
+$p$ must be:
 - a real number
 - greater than or equal to 1
 
-Norms are used to regularise objective fuctions.
+Norms are used to regularise objective functions. Objective fucntions are functions that are represented by linear equations. They are used to represent optimisation problems.
+
+---
+
