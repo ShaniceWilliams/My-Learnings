@@ -147,3 +147,13 @@ Norms are used to regularise objective functions. Objective fucntions are functi
 
 ---
 
+## Basis, Orthogonal and Orthonormal Vectors
+
+Basis vectors are vectors that can be scaled to represent any vector in any given vector space. It is typical to use unit vectors along axes of vector space.
+
+![Basis Vectors](Images/basis_vectors.png)
+
+### Orthogonal Vectors
+
+$x$ is considered a orthogonal vector only if $x^Ty=0$.
+They are at 90 degree angle to each other, assuming their norm (length/magnitude) is not equal to zero.
