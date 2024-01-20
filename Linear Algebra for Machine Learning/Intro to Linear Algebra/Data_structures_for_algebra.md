@@ -157,3 +157,49 @@ Basis vectors are vectors that can be scaled to represent any vector in any give
 
 $x$ is considered a orthogonal vector only if $x^Ty=0$.
 They are at 90 degree angle to each other, assuming their norm (length/magnitude) is not equal to zero.
+
+$n$-dimensional space has a maximum $n$ mutually orthogonal vectors.
+
+Orthonormal vectors are veectors that are orthogonal and have unit norm.
+Basis vectors are an example of orthonormal vactors as they are perpendicular and have a norm of 1.
+
+Here is a code example:
+
+```python
+i = np.arry([0, 1])
+j = np.arry([1, 0])
+np/dot(i, j) # This will equal zero
+```
+
+## Matrices
+
+Matrices are 2 dimensional arrays of number. They are denoted in uppercase, italics and bold **$X$**. They are represented in mathematical notation as $(n_{row}, n_{col})$. Having the rows before columns is considered as the height having priority over width. So as an example if **$X$** had 3 rows and 2 columns it would be represented as (3, 2).
+
+Individual elements (scalars) are represented as uppercase italics. 
+
+A colon can also be used to represent an entire row or column. So for example, let's say we are working with the following matrix:
+$$
+\begin{bmatrix}
+25 & 2 \\
+5 & 26 \\
+3 & 7
+\end{bmatrix}
+$$
+
+We can represent this also as:
+$$
+\begin{bmatrix}
+X_{1,1} & X_{1,2} \\
+X_{2,1} & X_{2,2} \\
+X_{3,1} & X_{3,2}
+\end{bmatrix}
+$$
+
+The left most column would be **$X_{:, 1}$**, whilst the middle row could be represented by **$X_{2, :}$**.
+
+Nested lists are used within an array method to create matrices:
+```python
+np.array([[25, 2], [5, 26], [3, 7]])
+```
+
+Each nested list represents a row in the matrix.
