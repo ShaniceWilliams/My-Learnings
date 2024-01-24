@@ -203,3 +203,43 @@ np.array([[25, 2], [5, 26], [3, 7]])
 ```
 
 Each nested list represents a row in the matrix.
+
+## Generic Tensor Notation
+
+Uppercase bold italics and sans serif is used to represent tensors with dimensions higher than 2 e.g. **_X_**.
+
+In a 4 rank tensor, at position $i, j, k, l$ are denoted as **_X_**$_{(i, j, k, l)}$.
+
+Rank 4 tensors are common for images where each dimenion correspondes to:
+- Number of images in training batch
+- Image height in pixels
+- Image width in pixels
+- Number of color channels e.g. 3 for full color images (RGB)
+
+## Exercises
+
+1) What is the transpose of the following vector:
+$$
+\begin{bmatrix}
+25\\
+2\\
+-3\\
+-23
+\end{bmatrix}
+$$
+
+Answer: $[25, 2, -3, -23]$
+
+2) Usiing algebraic notation, what are the dimensions of the below matrix **$Y$**?
+$$
+\begin{bmatrix}
+42 & 4 & 7 & 99\\
+-99 & -3 & 17 & 22
+\end{bmatrix}
+$$
+
+Answer: $(2, 4)$
+
+3) Using algebraic notation, what is the position of the element in the above matrix with the value 17?
+
+Answer: **_Y_**$_{2,3}$
